@@ -1,16 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bloxxvixygicq"]
+[gd_scene load_steps=8 format=3 uid="uid://bloxxvixygicq"]
 
 [ext_resource type="Script" uid="uid://clmbv4rs028g1" path="res://scenes/book/book.gd" id="1_uah28"]
 [ext_resource type="Texture2D" uid="uid://bookx73r327aj" path="res://assets/Protoype_handbookp1.png" id="2_em4jt"]
+[ext_resource type="Texture2D" uid="uid://cjvua2m2lup40" path="res://assets/Protoype_handbookp2.png" id="3_15p7g"]
+[ext_resource type="Texture2D" uid="uid://pu75sj8ob72d" path="res://assets/Protoype_handbookp3.png" id="4_86ghe"]
+[ext_resource type="Texture2D" uid="uid://0rrflsd6jy5r" path="res://assets/test.png" id="5_86ghe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6gwx"]
 size = Vector2(505.884, 255.577)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15p7g"]
+size = Vector2(20, 12.0647)
 
 [node name="Book" type="RigidBody2D"]
 collision_layer = 0
 input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_uah28")
+pages = Array[CompressedTexture2D]([ExtResource("2_em4jt"), ExtResource("3_15p7g"), ExtResource("4_86ghe")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.62939e-06, 3.8147e-06)
@@ -22,5 +29,37 @@ position = Vector2(-5.96046e-08, 4.76837e-07)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_em4jt")
 
+[node name="TurnPageRight" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/TurnPageRight"]
+position = Vector2(180, 106.898)
+scale = Vector2(4.74409, 8.87963)
+shape = SubResource("RectangleShape2D_15p7g")
+
+[node name="TurnIndicatorRight" type="Sprite2D" parent="Sprite2D/TurnPageRight"]
+visible = false
+position = Vector2(205, 125)
+scale = Vector2(0.497864, 0.431942)
+texture = ExtResource("5_86ghe")
+
+[node name="TurnPageLeft" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/TurnPageLeft"]
+position = Vector2(-180, 110)
+scale = Vector2(4.74409, 8.87963)
+shape = SubResource("RectangleShape2D_15p7g")
+
+[node name="TurnIndicatorLeft" type="Sprite2D" parent="Sprite2D/TurnPageLeft"]
+visible = false
+position = Vector2(-205, 126.667)
+scale = Vector2(-0.498, 0.432)
+texture = ExtResource("5_86ghe")
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
+[connection signal="input_event" from="Sprite2D/TurnPageRight" to="." method="_on_turn_page_right_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/TurnPageRight" to="." method="_on_turn_page_right_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/TurnPageRight" to="." method="_on_turn_page_right_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/TurnPageLeft" to="." method="_on_turn_page_left_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/TurnPageLeft" to="." method="_on_turn_page_left_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/TurnPageLeft" to="." method="_on_turn_page_left_mouse_exited"]
