@@ -1,26 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bloxxvixygicq"]
+[gd_scene load_steps=4 format=3 uid="uid://c5mfss0xtdxac"]
 
-[ext_resource type="Script" uid="uid://clmbv4rs028g1" path="res://scenes/book/book.gd" id="1_uah28"]
-[ext_resource type="Texture2D" uid="uid://bookx73r327aj" path="res://assets/Protoype_handbookp1.png" id="2_em4jt"]
+[ext_resource type="Script" uid="uid://clsgr68htaq7w" path="res://scenes/draggable/draggable.gd" id="1_1j0cm"]
+[ext_resource type="Texture2D" uid="uid://db7523qc081t" path="res://assets/Protoype_notes.png" id="2_1j0cm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6gwx"]
-size = Vector2(505.884, 255.577)
+size = Vector2(404.417, 255.577)
 
-[node name="Book" type="RigidBody2D"]
+[node name="Draggable" type="RigidBody2D"]
 collision_layer = 0
 input_pickable = true
 gravity_scale = 0.0
-script = ExtResource("1_uah28")
+script = ExtResource("1_1j0cm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.62939e-06, 3.8147e-06)
-scale = Vector2(0.539985, 0.757716)
+position = Vector2(-30.4785, 3.8147e-06)
+scale = Vector2(0.600758, 1.0731)
 shape = SubResource("RectangleShape2D_c6gwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.96046e-08, 4.76837e-07)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_em4jt")
+texture = ExtResource("2_1j0cm")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]

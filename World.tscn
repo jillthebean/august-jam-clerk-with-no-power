@@ -1,70 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://d32innfa8g6yj"]
+[gd_scene load_steps=6 format=3 uid="uid://d32innfa8g6yj"]
 
 [ext_resource type="Script" uid="uid://di3ac6rkmm77w" path="res://world.gd" id="1_2dftf"]
 [ext_resource type="PackedScene" uid="uid://bloxxvixygicq" path="res://scenes/book/book.tscn" id="1_c6gwx"]
+[ext_resource type="PackedScene" uid="uid://c5mfss0xtdxac" path="res://scenes/draggable/draggable.tscn" id="3_bcbcq"]
+[ext_resource type="Texture2D" uid="uid://bmd2ywpqwpcrf" path="res://assets/Protoype_background.png" id="3_js7pq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c6gwx"]
 
-[node name="World" type="Node"]
+[node name="World" type="Node2D"]
 script = ExtResource("1_2dftf")
 
-[node name="Base" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Background" type="Node" parent="."]
 
-[node name="Table" type="ColorRect" parent="Base"]
-layout_mode = 0
-offset_top = 406.0
-offset_right = 40.0
-offset_bottom = 446.0
-scale = Vector2(11.7388, 6.11378)
-color = Color(1, 0.427451, 0.301961, 1)
+[node name="ProtoypeBackground" type="Sprite2D" parent="Background"]
+scale = Vector2(0.600188, 0.600733)
+texture = ExtResource("3_js7pq")
+centered = false
 
-[node name="StoreFront" type="ColorRect" parent="Base"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(11.744, 10.1505)
-color = Color(1, 0.741176, 0.34902, 1)
+[node name="ResearchTable" type="Node" parent="."]
 
-[node name="ResearchArea" type="ColorRect" parent="Base"]
-layout_mode = 0
-offset_left = 470.0
-offset_right = 510.0
-offset_bottom = 40.0
+[node name="Book" parent="ResearchTable" instance=ExtResource("1_c6gwx")]
+position = Vector2(969, 160)
+
+[node name="Draggable" parent="ResearchTable" instance=ExtResource("3_bcbcq")]
+position = Vector2(676, 154)
+
+[node name="Bottom" type="StaticBody2D" parent="ResearchTable"]
+position = Vector2(1043, -19)
 scale = Vector2(18.0215, 16.7582)
-color = Color(0.627451, 0.458824, 0.00784314, 1)
 
-[node name="Book" parent="Base/ResearchArea" instance=ExtResource("1_c6gwx")]
-position = Vector2(14.4272, 19.0355)
-
-[node name="Bottom" type="StaticBody2D" parent="Base/ResearchArea"]
-position = Vector2(0.110979, -1.90951)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Bottom"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchTable/Bottom"]
 position = Vector2(18.4779, 40.0998)
 shape = SubResource("WorldBoundaryShape2D_c6gwx")
 
-[node name="Left" type="StaticBody2D" parent="Base/ResearchArea"]
-position = Vector2(39.1754, 1.13377)
+[node name="Left" type="StaticBody2D" parent="ResearchTable"]
+position = Vector2(1203, -524)
 rotation = 1.5708
+scale = Vector2(16.7582, 18.0215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Left"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchTable/Left"]
 position = Vector2(18.4779, 40.0998)
 shape = SubResource("WorldBoundaryShape2D_c6gwx")
 
-[node name="Right" type="StaticBody2D" parent="Base/ResearchArea"]
-position = Vector2(0.776849, 38.2499)
+[node name="Right" type="StaticBody2D" parent="ResearchTable"]
+position = Vector2(447, 1137)
 rotation = -1.5708
+scale = Vector2(16.7582, 18.0215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Right"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchTable/Right"]
 position = Vector2(18.4779, 40.0998)
 shape = SubResource("WorldBoundaryShape2D_c6gwx")
 
-[node name="Top" type="StaticBody2D" parent="Base/ResearchArea"]
-position = Vector2(37.7882, 41.5916)
+[node name="Top" type="StaticBody2D" parent="ResearchTable"]
+position = Vector2(2075, 687)
 rotation = -3.14159
+scale = Vector2(18.0215, 16.7582)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Top"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchTable/Top"]
 position = Vector2(18.3115, 42.3076)
 shape = SubResource("WorldBoundaryShape2D_c6gwx")
