@@ -35,3 +35,26 @@ You are a clerk who's in charge of admitting candidates to magical exams. They c
 
 - Progress
   - Du kriegst Geschenke von deinen Leuten, zB magische Artefakte mit denen du Infos kriegst
+
+## Meine Idee
+You start the day, and a person appears before you.
+"Hello, I'd like to take up a quest."
+They give you their credentials: an old amulet
+"Where are you from?"
+They say "from Isaya"
+You take up your guidebook and look up the mage's guilds in Isaya. You find one that has the amulet's symbol.
+You look further and see that the accepted mages from that guild must have 4 stars or higher on their crest. You look and see it's three stars, so you can't admit them.
+However, you advise them on how they can earn extra credentials to get admitted anyway, since there are alternative ways to get admitted.
+They thank you for your time and the next person comes up.
+
+
+## Jills Idee
+auf Tisch kommt Schmuckstück, man hat 3 Bücher, Person sagt wo sie herkommt
+Schmuck: gibt Symbol und Material. Kombination bedeutet je nach Herkunftsort unterschiedlichen Grad
+Bücher geben Refernz für Material und Symbole
+Man kann auf den Grad drücken und kriegst gesagt ob du richtig bist oder nicht, wenn nicht kannst dus am nächsten Tag nochmal probieren
+Später: Ringe, Broschen, etc.
+
+
+Variante:
+Jemand hat keine Papiere -> zum Registrierungsoffice schicken
