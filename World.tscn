@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://d32innfa8g6yj"]
+
+[ext_resource type="PackedScene" uid="uid://bloxxvixygicq" path="res://scenes/book/book.tscn" id="1_c6gwx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c6gwx"]
+
+[node name="World" type="Node"]
+
+[node name="Base" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Table" type="ColorRect" parent="Base"]
+layout_mode = 0
+offset_top = 406.0
+offset_right = 40.0
+offset_bottom = 446.0
+scale = Vector2(11.7388, 6.11378)
+color = Color(1, 0.427451, 0.301961, 1)
+
+[node name="StoreFront" type="ColorRect" parent="Base"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.744, 10.1505)
+color = Color(1, 0.741176, 0.34902, 1)
+
+[node name="ResearchArea" type="ColorRect" parent="Base"]
+layout_mode = 0
+offset_left = 470.0
+offset_right = 510.0
+offset_bottom = 40.0
+scale = Vector2(18.0215, 16.7582)
+color = Color(0.627451, 0.458824, 0.00784314, 1)
+
+[node name="Book" parent="Base/ResearchArea" instance=ExtResource("1_c6gwx")]
+position = Vector2(14.4272, 19.0355)
+
+[node name="Bottom" type="StaticBody2D" parent="Base/ResearchArea"]
+position = Vector2(0.110979, -1.90951)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Bottom"]
+position = Vector2(18.4779, 40.0998)
+shape = SubResource("WorldBoundaryShape2D_c6gwx")
+
+[node name="Left" type="StaticBody2D" parent="Base/ResearchArea"]
+position = Vector2(39.1754, 1.13377)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Left"]
+position = Vector2(18.4779, 40.0998)
+shape = SubResource("WorldBoundaryShape2D_c6gwx")
+
+[node name="Right" type="StaticBody2D" parent="Base/ResearchArea"]
+position = Vector2(0.776849, 38.2499)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Right"]
+position = Vector2(18.4779, 40.0998)
+shape = SubResource("WorldBoundaryShape2D_c6gwx")
+
+[node name="Top" type="StaticBody2D" parent="Base/ResearchArea"]
+position = Vector2(37.7882, 41.5916)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ResearchArea/Top"]
+position = Vector2(18.3115, 42.3076)
+shape = SubResource("WorldBoundaryShape2D_c6gwx")
