@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://duj627q0mrl31"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="World" type="Node" parent="."]
+
+[node name="Base" type="ColorRect" parent="World"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Table" type="ColorRect" parent="World/Base"]
+layout_mode = 0
+offset_top = 406.0
+offset_right = 40.0
+offset_bottom = 446.0
+scale = Vector2(11.7388, 6.11378)
+color = Color(1, 0.427451, 0.301961, 1)
+
+[node name="StoreFront" type="ColorRect" parent="World/Base"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.744, 10.1505)
+color = Color(1, 0.741176, 0.34902, 1)
+
+[node name="ResearchArea" type="ColorRect" parent="World/Base"]
+layout_mode = 0
+offset_left = 470.0
+offset_right = 510.0
+offset_bottom = 40.0
+scale = Vector2(18.0215, 16.7582)
+color = Color(0.627451, 0.458824, 0.00784314, 1)
