@@ -1,21 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://bloxxvixygicq"]
 
 [ext_resource type="Script" uid="uid://clmbv4rs028g1" path="res://scenes/book/book.gd" id="1_uah28"]
+[ext_resource type="Texture2D" uid="uid://bookx73r327aj" path="res://assets/Protoype_handbookp1.png" id="2_em4jt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6gwx"]
-size = Vector2(20, 40)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uah28"]
+size = Vector2(505.884, 255.577)
 
 [node name="Book" type="RigidBody2D"]
+input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_uah28")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.62939e-06, 3.8147e-06)
 scale = Vector2(0.707672, 1.07991)
 shape = SubResource("RectangleShape2D_c6gwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.96046e-08, 4.76837e-07)
-scale = Vector2(13.7772, 43.1172)
-texture = SubResource("PlaceholderTexture2D_uah28")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_em4jt")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
