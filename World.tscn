@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d32innfa8g6yj"]
+[gd_scene load_steps=8 format=3 uid="uid://d32innfa8g6yj"]
 
 [ext_resource type="Script" uid="uid://di3ac6rkmm77w" path="res://world.gd" id="1_2dftf"]
 [ext_resource type="PackedScene" uid="uid://bloxxvixygicq" path="res://scenes/book/book.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c5mfss0xtdxac" path="res://scenes/draggable/draggable.tscn" id="3_bcbcq"]
 [ext_resource type="Texture2D" uid="uid://bmd2ywpqwpcrf" path="res://assets/Protoype_background.png" id="3_js7pq"]
+[ext_resource type="Texture2D" uid="uid://ckfoxgm168hon" path="res://assets/Protoype_character.png" id="5_p1v5b"]
+[ext_resource type="Texture2D" uid="uid://dvj1dkrxn002s" path="res://assets/Protoype_amulet.png" id="6_wygdx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c6gwx"]
 
@@ -59,3 +61,13 @@ scale = Vector2(18.0215, 16.7582)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ResearchTable/Top"]
 position = Vector2(18.3115, 42.3076)
 shape = SubResource("WorldBoundaryShape2D_c6gwx")
+
+[node name="ProtoypeCharacter" type="Sprite2D" parent="ResearchTable"]
+position = Vector2(540, 315)
+scale = Vector2(0.641358, 0.641358)
+texture = ExtResource("5_p1v5b")
+
+[node name="ProtoypeAmulet" type="Sprite2D" parent="ResearchTable"]
+position = Vector2(260, 546)
+scale = Vector2(0.639696, 0.639696)
+texture = ExtResource("6_wygdx")
