@@ -8,6 +8,7 @@ size = Vector2(20, 40)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uah28"]
 
 [node name="Book" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_uah28")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
